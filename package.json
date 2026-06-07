@@ -1,20 +1,12 @@
 {
-	"name": "miraiBot",
-	"version": "1.2.15",
-	"description": "A simple Facebook Messenger Bot fixed for modern deployment.",
-	"main": "mirai.js",
-	"scripts": {
-		"start": "node mirai.js",
-		"login": "node login.js",
-		"test": "node --trace-warnings --use_strict --async-stack-traces mirai.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/miraipr0ject/miraiv2.git"
-	},
-	"author": "CatalizCS & SpermLord",
-	"license": "GPL-3.0",
-	"dependencies": {
+  "name": "miraiBot",
+  "version": "1.2.14",
+  "description": "A simple Facebook Messenger Bot",
+  "main": "mirai.js",
+  "scripts": {
+    "start": "node mirai.js"
+  },
+  "dependencies": {
     "axios": "^1.7.0",
     "body-parser": "^1.20.2",
     "caesar-salad": "^2.1.0",
@@ -35,5 +27,5 @@
     "sqlite3": "5.1.7",
     "string-similarity": "^4.0.4",
     "totp-generator": "^1.0.0"
+  }
 }
-
