@@ -6,7 +6,8 @@ const { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync, rm } =
 const { join, resolve } = require("path");
 const { execSync } = require('child_process');
 const logger = require("./utils/log.js");
-const login = require("@miraipr0ject/fca-unofficial");
+// UPDATED: Changed from @miraipr0ject/fca-unofficial to fca-unofficial
+const login = require("fca-unofficial");
 const axios = require("axios");
 const listPackage = JSON.parse(readFileSync('./package.json')).dependencies;
 const listbuiltinModules = require("module").builtinModules;
@@ -104,6 +105,18 @@ global.getText = function (...args) {
 	}
 	return text;
 }
+
+try {
+	var appStateFile = resolve(join(global.client.mainPath, global.config.APPSTATEPATH || "appstate.json"));
+	var appState = require(appStateFile);
+	logger.loader(global.getText("mirai", "foundPathAppstate"))
+}
+catch { return logger.loader(global.getText("mirai", "notFoundPathAppstate"), "error") }
+
+////////////////////////////////////////////////////////////
+//========= Login account and start Listen Event =========//
+////////////////////////////////////////////////////////////
+// (Rest of the original obfuscated code follows here)
 
 try {
 	var appStateFile = resolve(join(global.client.mainPath, global.config.APPSTATEPATH || "appstate.json"));
